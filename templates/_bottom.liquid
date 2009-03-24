@@ -1,0 +1,26 @@
+<hr class="hide" />
+    <div id="ancillary">
+      <div class="inside">
+        <div class="block first">
+          <h2>About</h2>
+            <p>This is Stephen Brown's blog. I'm a 20yr old student at Warwick University, studying computer science and running rivers in my kayak.</p>
+        </div>
+
+        <div class="block">
+          <h2>Recently</h2>
+          <ul class="dates">
+{% for article in articles %}
+            <li><a href="{{ article.url }}"><span class="date">{{ article.published_at | strftime: '%m.%y' }}</span> {{ article.title }}</a></li>
+{% endfor %}
+         </ul>
+      </div>
+			
+      <div class="block">
+        <h2>Categories</h2>
+        <ul class="counts">
+{% for category in site.blog_sections %}<li>{{ category | link_to_section  }}</li>{% endfor %}
+        </ul>
+      </div>
+			
+      <div class="clear"></div>
+    </div>

@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+{% head %}
+<title>{{ site.title }}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{{ 'style' | stylesheet }}
+  {{ head.feed }}
+{% endhead %}
+<body>
+	<div id="header">
+		<div class="inside">
+			<h2><a href="/">{{ site.title }}</a></h2>
+			<p class="description">{{ site.subtitle }} | <a href="#">Portfolio</a></p>
+		</div>
+	</div>
+{{ content_for_layout }}
+	<hr class="hide" />
+	<div id="footer">
+		<div class="inside">
+			<p class="copyright">&copy;2003-2009 Stephen Brown</p>
+			<p class="attributes"><a href="http://validator.w3.org/check/referer">Valid XHTML</a> <a href="http://jigsaw.w3.org/css-validator/check/referrer">Valid CSS</a></p>
+		</div>
+	</div>
+	<!-- [END] #footer -->
+	
+</body>
+</html>

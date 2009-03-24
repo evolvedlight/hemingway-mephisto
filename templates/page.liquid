@@ -1,0 +1,42 @@
+<div id="primary" class="single-post">
+  <div class="inside">
+    <div class="primary">
+      <h1>{{ article.title }}</h1>
+      {{ article.body }}
+    </div>
+    <hr class="hide" />
+    <div class="secondary">
+      <h2>About this entry</h2>
+      <div class="featured">
+        <p>You&rsquo;re currently reading &ldquo;{{ article.title }},&rdquo; an entry on {{ site.title }}</p>
+        <dl>
+          <dt>Published:</dt>
+          <dd>{{ article.published_at | strftime: '%m.%d.%y / %H%p' }}</dd>
+        </dl>
+      {% if article.published_at != article.updated_at %}
+        <dl>
+          <dt>Updated:</dt>
+          <dd>{{ article.updated_at | strftime: '%m.%d.%y / %H%p' }}</dd>
+        </dl>
+      {% endif %}
+        <dl>
+          <dt>Sections:</dt>
+          <dd>
+{% for section in article.sections %}
+  {{ section.link }}
+{% endfor %}
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<!-- [END] #primary -->
+
+
+   {% include 'bottom' %}
+    <div class="clear"></div>
+    
+  </div>
+</div>
