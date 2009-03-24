@@ -39,10 +39,11 @@
   <div class="inside">
     <div class="comment-head">
       <h2>{{ article.comments_count | pluralize: 'comment' }}</h2>
-      <span class="details"><a href="#comment-form">Jump to comment form</a> | <a href="#">comments rss</a> <a href="#what-is-comment-rss" class="help">[?]</a></span>
+      <span class="details">{% if article.accept_comments %}<a href="#comment-form">Jump to comment form</a> | {% endif %} <a href="{{article.comments_feed_url}}">comments rss</a> <a href="#what-is-comment-rss" class="help">[?]</a></span>
     </div>
+		{% if article.comments_count > 0 %}
     <ol id="comments">
-{% for comment in comments %}
+{% for comment in article.comments %}
       <li>
         <cite>
           <span class="author">{{ comment.author }}</span>
@@ -55,8 +56,8 @@
       </li>
 {% endfor %}
     </ol>
-    
-    <div id="comment-form">
+    {% endif %}
+    <div id="comment-form-div">
       {% commentform %}
       <h3 class="formhead">Have your say</h3>
       <p>A name is required. You may use HTML in your comments.</p>
@@ -78,4 +79,4 @@
     <div class="clear"></div>
     
   </div>
-</div>
+

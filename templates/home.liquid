@@ -9,7 +9,7 @@
           Posted at {{ article.published_at | strftime: '%H%p on %m/%d/%y' }} | 
           {{ article | link_to_comments }} |
           Filed Under: {% for section in article.sections %}{{ section | link_to_section }}{% endfor %} | 
-          <span class="read-on"><a href="#">read on</a></span>
+          <span class="read-on"><a href="{{ article.url}}">read on</a></span>
         </div>
       </div>
   {% endif %}
