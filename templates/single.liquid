@@ -64,7 +64,7 @@
       {{ form.name }}<label class="text" for="comment_author">Name</label><br />
       {{ form.email }}<label class="text" for="comment_author_email">Email</label><br />
       {{ form.url }}<label class="text" for="comment_author_url">Website</label><br />
-      {{ form.body }}
+      <textarea name="comment[body]" id="comment" cols="40%" rows="10">{{ submitted.body }}</textarea>
       <div class="formactions">
         {{ form.submit }}
       </div>
